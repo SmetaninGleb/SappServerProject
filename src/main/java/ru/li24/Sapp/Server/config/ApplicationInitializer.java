@@ -1,4 +1,4 @@
-package ru.li24.Sapp.Server;
+package ru.li24.Sapp.Server.config;
 
 
 import org.springframework.web.WebApplicationInitializer;
@@ -21,7 +21,7 @@ public class ApplicationInitializer implements WebApplicationInitializer {
         servletContext.addListener(new ContextLoaderListener(context));
 
         ServletRegistration.Dynamic servlet = servletContext.addServlet(DISPATCHER, new DispatcherServlet(context));
-        servlet.addMapping("/");
+        servlet.addMapping("/*");
         servlet.setLoadOnStartup(1);
     }
 }
